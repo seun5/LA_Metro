@@ -39,10 +39,10 @@
           <ul class="nav" >
             <div class="btn-group-vertical" data-bind="foreach: lanes">
               <div class="nav-item btn-yes" data-bind="text:title , 
-              click: clicked($data.id),
+              enable:visualize($data.id),
               attr: {'id':'button-'+id ,'href': '#collapse'+id}" data-toggle="collapse"></div>
               <div data-bind="attr: { 'id': 'collapse'+id }" class="collapse" >
-                <div class="" data-bind="foreach: $root.metros">
+                <div class="" data-bind="foreach: $root.locationList">
                   <!-- ko if: $parent.id === route_id -->
                   <div class="list-group-item adjustment" data-bind="text:title, click:show"></div>
                   <!-- /ko -->

@@ -12,8 +12,9 @@ var Metro_Lane = function (data){
 
 
   //Kept this seperate from locations, because it needs to in a sequential order
-  this.clicked = function(id) {
+  this.visualize = function(id) {
     var sequence_url = 'http://api.metro.net/agencies/lametro-rail/routes/' + id +'/sequence';
+    if(metro_sequence[id] ===undefined) {
 
     $.ajax({
       url: sequence_url,
@@ -32,29 +33,18 @@ var Metro_Lane = function (data){
           sequence.push(position);
 
         }
-        if(flightPlanCoordinates[id] ===undefined) {
-          flightPlanCoordinates[id] = sequence;
-          var flightPath = new google.maps.Polyline({
-            map: map,
-            path: flightPlanCoordinates[id],
-            strokeColor: id_color[id],
-            strokeWeight: 5
-          });
-        }
-      } 
-
-    })
+        metro_sequence[id] = sequence;
+        var flightPath = new google.maps.Polyline({
+          map: map,
+          path: metro_sequence[id],
+          strokeColor: id_color[id],
+          strokeWeight: 5
+        });
+        
+        } 
+      })
     }
-
-
-
-
-
-
-
-
-
-
+  }
 }
 
 
@@ -267,7 +257,7 @@ function initMap() {
   bounds = new google.maps.LatLngBounds();
 
   markers = []
-  flightPlanCoordinates ={}
+  metro_sequence ={}
 
 
 
