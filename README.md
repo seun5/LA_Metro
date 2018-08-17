@@ -1,4 +1,4 @@
-# Item Catalog Project
+# Neighborhood Map Project
 Udacity Full Stack Web Developer Nano Degree Project #5
 
 This is a simple, static web application to display the LA metro rail in a simple manner. 
