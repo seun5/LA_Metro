@@ -132,17 +132,6 @@ var ViewModel = function(){
   });
 
 
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
