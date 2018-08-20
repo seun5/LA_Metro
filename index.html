@@ -39,10 +39,9 @@
           <ul class="nav" >
             <div class="btn-group-vertical" data-bind="foreach: lanes">
               <div class="nav-item btn-yes" data-bind="text:title , 
-              enable:visualize($data.id),
               attr: {'id':'button-'+id ,'href': '#collapse'+id}" data-toggle="collapse"></div>
               <div data-bind="attr: { 'id': 'collapse'+id }" class="collapse" >
-                <div class="" data-bind="foreach: $root.locationList">
+                <div class="" data-bind="foreach: $root.metros">
                   <!-- ko if: $parent.id === route_id -->
                   <div class="list-group-item adjustment" data-bind="text:title, click:show"></div>
                   <!-- /ko -->
@@ -58,7 +57,7 @@
         <main class= "col p-0">
           <a href class="float-left m-3" data-target="#sidebar" data-toggle="collapse">
             <span >
-              <img id="toggle_logo" class="ham" src="static/index.png"></img>
+              <img id="toggle_logo" class="ham" src="static/logo.png"></img>
             </span>
           </a>  
           <div class="">
